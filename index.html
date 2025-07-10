@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubinsko.ba - Dubinsko čišćenje namještaja i vozila u Sarajevu</title>
+    <meta name="description" content="Profesionalno dubinsko čišćenje namještaja i car detailing u Sarajevu. Dolazimo na vašu adresu. Najpovoljnije cijene u gradu!">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .nav-menu a:hover {
+            color: #2563eb;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #374151;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 20, 60, 0.3);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 18px 36px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: #059669;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #1f2937;
+            font-weight: 700;
+        }
+
+        .section-alt {
+            background: #f8fafc;
+        }
+
+        /* Pricing Section */
+        .pricing-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-category {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .pricing-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: #2563eb;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-subtitle {
+            color: #6b7280;
+            font-size: 1rem;
+        }
+
+        .pricing-items {
+            space-y: 1rem;
+        }
+
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #f3f4f6;
+            transition: all 0.2s ease;
+        }
+
+        .pricing-item:hover {
+            padding-left: 0.5rem;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .pricing-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: #374151;
+            font-size: 1.1rem;
+        }
+
+        .item-price {
+            font-weight: bold;
+            color: #2563eb;
+            font-size: 1.3rem;
+            background: #eff6ff;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #4b5563;
+            line-height: 1.8;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .feature h3 {
+            font-size: 1.4rem;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .feature p {
+            color: #6b7280;
+            font-size: 1rem;
+        }
+
+        /* Testimonials */
+        .testimonials-slider {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 3.5rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            display: none;
+            border-left: 5px solid #2563eb;
+        }
+
+        .testimonial.active {
+            display: block;
+        }
+
+        .testimonial blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        .testimonial cite {
+            font-weight: bold;
+            color: #2563eb;
+            font-size: 1.1rem;
+        }
+
+        .slider-controls {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+
+        .slider-dot {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #d1d5db;
+            margin: 0 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: #2563eb;
+            transform: scale(1.2);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #2563eb;
+        }
+
+        .faq-question {
+            background: #f8fafc;
+            padding: 2rem;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .faq-question:hover {
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .faq-answer {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            background: white;
+        }
+
+        .faq-answer.active {
+            padding: 2rem;
+            max-height: 300px;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            color: #2563eb;
+        }
+
+        .faq-toggle.active {
+            transform: rotate(45deg);
+        }
+
+        /* Contact Section */
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: #2563eb;
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .contact-card p {
+            color: #6b7280;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .contact-card a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: #1d4ed8;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-bottom a {
+            text-decoration: none;
+            color: #2563eb;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            color: #f9fafb;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-nav ul li a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav ul li a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: #2563eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .section h2 {
+                font-size: 2.2rem;
+            }
+
+            .pricing-categories {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* SVG Icons */
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .icon-large {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#home" class="logo">Dubinsko.ba</a>
+                <ul class="nav-menu">
+                    <li><a href="#home">Početna</a></li>
+                    <li><a href="#pricing">Cjenovnik</a></li>
+                    <li><a href="#about">O nama</a></li>
+                    <li><a href="#testimonials">Reference</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Vratite sjaj vašem namještaju i vozilima!</h1>
+                <p>Najpovoljnije dubinsko čišćenje u Sarajevu – dolazimo na vašu adresu!</p>
+                <a href="#contact" class="cta-button">Zakažite termin</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <h2>Cjenovnik</h2>
+            <div class="pricing-container">
+                <div class="pricing-categories">
+                    <div class="pricing-category">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <svg class="icon-large" viewBox="0 0 448 512">
+                                    <path d="M248 48l0 208 48 0 0-197.3c23.9 13.8 40 39.7 40 69.3l0 128 48 0 0-128C384 57.3 326.7 0 256 0L192 0C121.3 0 64 57.3 64 128l0 128 48 0 0-128c0-29.6 16.1-55.5 40-69.3L152 256l48 0 0-208 48 0zM48 288c-12.1 0-23.2 6.8-28.6 17.7l-16 32c-5 9.9-4.4 21.7 1.4 31.1S20.9 384 32 384l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96 256 0 0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c11.1 0 21.4-5.7 27.2-15.2s6.4-21.2 1.4-31.1l-16-32C423.2 294.8 412.1 288 400 288L48 288z"/>
+                                </svg>
+                            </div>
+                            <h3 class="category-title">Namještaj</h3>
+                            <p class="category-subtitle">Profesionalno dubinsko čišćenje</p>
+                        </div>
+                        <div class="pricing-items">
+                            <div class="pricing-item">
+                                <span class="item-name">Ugaona garnitura</span>
+                                <span class="item-price">60 KM</span>
+                            </div>
+                            <div class="pricing-item">
+                                <span class="item-name">Trosjed</span>
+                                <span class="item-price">35 KM</span>
+                            </div>
+                            <div class="pricing-item">
+                                <span class="item-name">Dvosjed</span>
+                                <span class="item-price">30 KM</span>
+                            </div>
+                            <div class="pricing-item">
+                                <span class="item-name">Fotelja</span>
+                                <span class="item-price">20 KM</span>
+                            </div>
+                            <div class="pricing-item">
+                                <span class="item-name">Stolice</span>
+                                <span class="item-price">5-10 KM</span>
+                            </div>
+                            <div class="pricing-item">
+                                <span class="item-name">Tabure</span>
+                                <span class="item-price">10 KM</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-category">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <svg class="icon-large" viewBox="0 0 640 512">
+                                    <path d="M64 160C64 89.3 121.3 32 192 32l256 0c70.7 0 128 57.3 128 128l0 33.6c-36.5 7.4-64 39.7-64 78.4l0 48-384 0 0-48c0-38.7-27.5-71-64-78.4L64 160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48l0 176c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32L96 448c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32L0 272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3l0 48 0 32 32 0 384 0 32 0 0-32 0-48z"/>
+                                </svg>
+                            </div>
+                            <h3 class="category-title">Madraci</h3>
+                            <p class="category-subtitle">Dubinsko čišćenje i dezinfekcija</p>
+                        </div>
+                        <div class="pricing-items">
+                            <div class="pricing-item">
+                                <span class="item-name">Bračni madrac</span>
+                                <span class="item-price">30 KM</span>
+                            </div>
+                            <div class="pricing-item">
+                                <span class="item-name">Jednokrevetni madrac</span>
+                                <span class="item-price">20 KM</span>
+                            </div>
+                            <div class="pricing-item">
+                                <span class="item-name">Dječiji madrac</span>
+                                <span class="item-price">15 KM</span>
+                            </div>
+                            <div class="pricing-item">
+                                <span class="item-name">Dvostrano čišćenje</span>
+                                <span class="item-price">+10 KM</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-category">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <svg class="icon-large" viewBox="0 0 512 512">
+                                    <path d="M135.2 117.4L109.1 192l293.8 0-26.1-74.6C372.3 104.6 360.2 96 346.6 96L165.4 96c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32l181.2 0c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2l0 144 0 48c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-48L96 400l0 48c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-48L0 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/>
+                                </svg>
+                            </div>
+                            <h3 class="category-title">Vozila i ostalo</h3>
+                            <p class="category-subtitle">Car detailing i dodatne usluge</p>
+                        </div>
+                        <div class="pricing-items">
+                            <div class="pricing-item">
+                                <span class="item-name">Autosjedišta</span>
+                                <span class="item-price">60 KM</span>
+                            </div>
+                            <div class="pricing-item">
+                                <span class="item-name">Tepisi</span>
+                                <span class="item-price">4 KM/m²</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section section-alt">
+        <div class="container">
+            <h2>O nama</h2>
+            <div class="about-content">
+                <p>Dobili smo izvanredno iskustvo u oblasti dubinskog čišćenja namještaja i car detailinga. Naša primarna usluga je mašinsko dubinsko čišćenje namještaja, a također pružamo i detaljno čišćenje automobila.</p>
+                <p>Koristimo najsavremeniju tehnologiju i ekološki prihvatljive proizvode koji su sigurni za vašu porodicu i kućne ljubimce. Tim stručnjaka je posvećen detaljima i zadovoljstvu svakog klijenta.</p>
+                <p>Dolazimo direktno na vašu adresu u Sarajevu, omogućavajući vam maksimalnu udobnost i uštedu vremena.</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg class="icon-large" viewBox="0 0 24 24">
+                            <path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                        </svg>
+                    </div>
+                    <h3>Dolazimo na adresu</h3>
+                    <p>Usluge pružamo direktno kod vas kod kuće</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg class="icon-large" viewBox="0 0 24 24">
+                            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                        </svg>
+                    </div>
+                    <h3>Ekološki proizvodi</h3>
+                    <p>Koristimo samo sigurne i ekološki prihvatljive proizvode</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg class="icon-large" viewBox="0 0 512 512">
+                            <path d="M176 24c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40c-35.3 0-64 28.7-64 64l-40 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l40 0 0 56-40 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l40 0 0 56-40 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l40 0c0 35.3 28.7 64 64 64l0 40c0 13.3 10.7 24 24 24s24-10.7 24-24l0-40 56 0 0 40c0 13.3 10.7 24 24 24s24-10.7 24-24l0-40 56 0 0 40c0 13.3 10.7 24 24 24s24-10.7 24-24l0-40c35.3 0 64-28.7 64-64l40 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-40 0 0-56 40 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-40 0 0-56 40 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-40 0c0-35.3-28.7-64-64-64l0-40c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40-56 0 0-40c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40-56 0 0-40zM160 128l192 0c17.7 0 32 14.3 32 32l0 192c0 17.7-14.3 32-32 32l-192 0c-17.7 0-32-14.3-32-32l0-192c0-17.7 14.3-32 32-32zm192 32l-192 0 0 192 192 0 0-192z"/>
+                        </svg>
+                    </div>
+                    <h3>Moderna tehnologija</h3>
+                    <p>Najsavremenija oprema za najbolje rezultate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2>Reference</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial active">
+                    <blockquote>"Odličan servis! Garnitura izgleda kao nova. Stigli su na vrijeme i uradili posao profesionalno. Definitivno ću ih ponovo angažovati."</blockquote>
+                    <cite>- Amira Hodžić</cite>
+                </div>
+                <div class="testimonial">
+                    <blockquote>"Moj auto nikad nije bio čišći! Sjedišta su savršena, a cijena je bila veoma pristupačna. Preporučujem svima."</blockquote>
+                    <cite>- Marko Petrović</cite>
+                </div>
+                <div class="testimonial">
+                    <blockquote>"Brza usluga, odličan rezultat. Madrac je potpuno osviježen. Hvala vam na profesionalnom pristupu!"</blockquote>
+                    <cite>- Selma Begić</cite>
+                </div>
+                <div class="testimonial">
+                    <blockquote>"Najbolji servis dubinskog čišćenja u Sarajevu! Punktualnost, kvalitet i ljubaznost osoblja su na vrhunskom nivou."</blockquote>
+                    <cite>- Emir Đuliman</cite>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <span class="slider-dot active" onclick="currentSlide(1)"></span>
+                <span class="slider-dot" onclick="currentSlide(2)"></span>
+                <span class="slider-dot" onclick="currentSlide(3)"></span>
+                <span class="slider-dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section section-alt">
+        <div class="container">
+            <h2>Najčešća pitanja</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Dolazite li na adresu klijenta?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Da, dolazimo odmah na vašu adresu u Sarajevu. To je naša osnovna usluga - donosimo svu opremu i obavljamo čišćenje kod vas.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Gdje radite?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Radimo u cijelom Sarajevu i okolini. Bez obzira da li ste u centru grada ili na periferiji, doći ćemo do vas.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Koje proizvode koristite?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Koristimo isključivo ekološki prihvatljive, profesionalne proizvode koji su sigurni za vas, vašu porodicu i kućne ljubimce.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Kako da zakažem termin?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Možete nas kontaktirati putem Viber/WhatsApp na broj +387 61 525 452 ili poslati poruku preko Facebook stranice.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Koliko traje proces čišćenja?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Vrijeme zavisi od vrste i veličine predmeta. Prosječno: fotelja 30-45 min, garnitura 1-2 sata, madrac 45-60 min, autosjedišta 1-1.5 sat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <div class="contact-info-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg class="icon-large" viewBox="0 0 24 24">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <h3>Viber/WhatsApp</h3>
+                    <p>Pozovite ili pošaljite poruku</p>
+                    <a href="tel:+38761525452">+387 61 525 452</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg class="icon-large" viewBox="0 0 24 24">
+                            <path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                        </svg>
+                    </div>
+                    <h3>Lokacija</h3>
+                    <p>Područje rada</p>
+                    <a>Sarajevo i okolina</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg class="icon-large" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </div>
+                    <h3>Facebook</h3>
+                    <p>Kontaktirajte nas preko Messengera</p>
+                    <a href="https://www.facebook.com/profile.php?id=61562249854111">Pošaljite poruku</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-nav">
+                    <h4>Navigacija</h4>
+                    <ul>
+                        <li><a href="#home">Početna</a></li>
+                        <li><a href="#about">O nama</a></li>
+                        <li><a href="#pricing">Cjenovnik</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakt informacije</h4>
+                    <p>Telefon: +387 61 525 452</p>
+                    <p>Radno vrijeme: Svaki dan</p>
+                    <p>Područje: Sarajevo i okolina</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Pratite nas</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61562249854111" class="social-link">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dubinsko.ba. Sva prava zadržana.</p>
+                <p>Izrada sajta <a target="_blank" href="https://velimirpaleksic.github.io/portfolio/">Velimir Paleksić</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Testimonials slider
+        let slideIndex = 1;
+        
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+        
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.testimonial');
+            const dots = document.querySelectorAll('.slider-dot');
+            
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[slideIndex - 1].classList.add('active');
+            dots[slideIndex - 1].classList.add('active');
+        }
+
+        // Auto-advance testimonials
+        setInterval(() => {
+            slideIndex++;
+            showSlide(slideIndex);
+        }, 5000);
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const toggle = question.querySelector('.faq-toggle');
+                
+                // Close other open FAQ items
+                document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                    if (otherAnswer !== answer) {
+                        otherAnswer.classList.remove('active');
+                        otherAnswer.previousElementSibling.querySelector('.faq-toggle').classList.remove('active');
+                    }
+                });
+                
+                // Toggle current FAQ item
+                answer.classList.toggle('active');
+                toggle.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            }
+        });
+    </script>
+</body>
+</html>
